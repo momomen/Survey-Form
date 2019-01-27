@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+    <title>Survey Form</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet"> 
+    
+    <style type="text/css">
+    
+        body {
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background: linear-gradient(40deg, #A9D0F5, #D8D8D8, white);
+        }
+        
+        #main {
+            
+            margin: 0 100px;
+            background-color: #83A1F1;
+            border-radius: 0.4em;
+            margin-bottom: 10px;
+        }
+        
+        #description {
+            
+            padding-top: 30px;
+        }
+        
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0; 
+        }
+        
+        input[type=number] {
+            -moz-appearance:textfield;
+        }
+        
+        input {
+            
+            min-width: 50%;
+            height: 30px;
+            border: 1px solid #4F4F53;
+            border-radius: 3px;
+            padding-left: 5px;
+        }
+        
+        input[type=radio] {
+            min-width: auto;
+            height: auto;
+            margin:0;
+            margin-right: 4px;
+            
+        }
+        
+        input[type=checkbox] {
+            min-width: inherit;
+            height: auto;
+            margin: 7px 0;
+            vertical-align: baseline; 
+        }
+        
+        textarea {
+            min-width: 50%;
+            height: 60px;
+            border: 1px solid #4F4F53;
+            border-radius: 3px;
+            padding-left: 5px;
+            padding-top: 5px;
+        }
+        
+        select {
+            min-width: 25%;
+            height: 30px;
+            border: 1px solid #4F4F53;
+            border-radius: 3px; 
+        }
+        
+        #grid-form {
+            
+            display: grid;
+            grid-template-columns: repeat(2, minmax(90px, 1fr));
+            grid-gap: 10px;
+            
+        }
+        
+        .col-1 {
+            grid-column: 1 / 2;
+            justify-self: end;
+            align-self: center;
+            text-align: right;
+        }
+        
+        .col-2 {
+            grid-column: 2 / 3;
+            justify-self: start;
+            align-self: center;
+            text-align: left;
+        }
+        
+        .align-self-start {
+            align-self: start;
+            margin-top: 4px;
+        }
+        
+        #submit {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 1px solid #097CD5;
+            border-radius: 4px;
+            color: #097CD5;
+        }
+        
+        #submit:hover {
+            background-color: #D8D8D8;
+        }
+        
+        @media screen and (max-width:600px) {
+            #main {
+                margin: 0 50px;
+            }
+            
+            input {
+                max-width: 90%;
+            }
+            textarea {
+                max-width: 90%;
+            }
+        }
+        
+        @media screen and (max-width:350px) {
+            #main {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="title">Survey Form</h1>
+    
+    <div id="main">
+        
+        <p id="description">Let us know how we can improve freeCodeCamp</p>
+        
+        <form id="survey-form">
+            
+            <div id="grid-form">
+                <label id="name-label" for="name" class="col-1">* Name : </label>
+                <input required id="name" class="col-2" name="name" type="text" placeholder="Enter your name">
+
+
+
+                <label id="email-label" for="email" class="col-1">* Email : </label>
+                <input required id="email" class="col-2" name="email" type="email" placeholder="Enter your Email">
+
+
+
+                <label id="number-label" for="number" class="col-1">* Age : </label>
+                <input id="number" class="col-2" name="age" type="number" placeholder="You Age" min="17" max="70">
+
+
+
+                <label class="col-1">Which option best describes your current role?</label>
+                <select id="dropdown" class="col-2" required>
+                    <option disabled value="Select an option">Select an option</option>
+                    <option value="Student">Student</option>
+                    <option value="Full time job">Full time job</option>
+                    <option value="Full time learner">Full time learner</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                    <option value="Other">Other</option>
+                </select>
+
+
+
+                <div class="col-2">
+                    <input class="" type="radio" name="recommend" value="Definitely"><p style="display: inline;">Definitely</p>
+                </div>
+
+                <label for="radio" class="col-1">* How likely is that you would recommend freeCodeCamp to a friend?</label>
+
+                <div class="col-2">
+                    <input class="" type="radio" name="recommend" value="Maybe"><p style="display: inline;">Maybe</p>
+                </div>
+
+                <div class="col-2">
+                    <input class="" type="radio" name="recommend" value="Not sure"><p style="display: inline;">Not sure</p>
+                </div>
+
+
+                <label class="col-1">What do you like most in FCC:</label>
+                <select id="select-2" class="col-2" required>
+                    <option disabled value="Select an option">Select an option</option>
+                    <option value="Challenges">Challenges</option>
+                    <option value="Projects">Projects</option>
+                    <option value="Community">Community</option>
+                    <option value="Open Source">Open Source</option>
+                </select>
+
+                <label class="col-1 align-self-start">Things that should be improved in the future <br> (Check all that apply):</label>
+
+                <div class="col-2">
+                    <input type="checkbox" name="thing1" value="Front-end Projects">
+                    <label class="check-label" for="thing1">Front-end Projects</label>
+                    <br>
+                    <input type="checkbox" name="thing2" value="Back-end Projects">
+                    <label class="check-label" for="thing2">Back-end Projects</label>
+                    <br>
+                    <input type="checkbox" name="thing3" value="Data Visualization">
+                    <label class="check-label" for="thing3">Data Visualization</label>
+                    <br>
+                    <input type="checkbox" name="thing4" value="Challenges">
+                    <label class="check-label" for="thing4">Challenges</label>
+                    <br>
+                    <input type="checkbox" name="thing5" value="Open Source Community">
+                    <label class="check-label" for="thing5">Open Source Community</label>
+                    <br>
+                    <input type="checkbox" name="thing6" value="Gitter help roomsy">
+                    <label class="check-label" for="thing6">Gitter help rooms</label>
+                    <br>
+                    <input type="checkbox" name="thing7" value="Videos">
+                    <label class="check-label" for="thing7">Videos</label>
+                    <br>
+                    <input type="checkbox" name="thing8" value="City Meetups">
+                    <label class="check-label" for="thing8">City Meetups</label>
+                    <br>
+                    <input type="checkbox" name="thing9" value="Wiki">
+                    <label class="check-label" for="thing9">Wiki</label>
+                    <br>
+                    <input type="checkbox" name="thing10" value="Forum">
+                    <label class="check-label" for="thing10">Forum</label>
+                    <br>
+                    <input type="checkbox" name="thing11" value="Additional Courses">
+                    <label class="check-label" for="thing11">Additional Courses</label>
+                </div>
+
+                <label class="col-1 align-self-start">Any comments or suggestions?</label>
+                <textarea class="col-2" placeholder="Enter your text here ...."></textarea>
+                
+            </div>
+         
+            <button type="submit" name="button" id="submit">Submit</button>
+        </form>
+    
+    </div>
+    
+    
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  
+</body>
+    
+</html>
